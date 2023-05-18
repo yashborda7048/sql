@@ -126,3 +126,14 @@ LIMIT 4;
 SELECT *
 FROM `user` AS u
 WHERE u.age >= 21;
+-- add `email` cloumn 
+ALTER TABLE `user`
+ADD `email` varchar(255);
+-- all user email set demo@gmail.com 
+UPDATE `user`
+SET `email` = 'demo@gmail.com';
+-- remove cloumn email    
+ALTER TABLE `user` DROP COLUMN `email`;
+-- rename old cloumnname phone to new cloumnname moblie_number
+ALTER TABLE `user`
+    RENAME COLUMN `phone` to `mobile`;
