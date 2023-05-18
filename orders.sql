@@ -23,8 +23,8 @@ VALUES (1, 3, '2023-05-18', 500, 3),
     (6, 4, '2023-05-09', 500, 3),
     (7, 5, '2023-05-12', 500, 2);
 -- join table 
-SELECT `order.order_id`,
-    `user.id`,
-    `user.name`
+SELECT `order`.`order_id`,
+    `user`.`id`,
+    `user`.`name`
 FROM `order`
-    INNER JOIN `user` ON `order.customer_id` = `user.id`;
+    INNER JOIN `user` ON `order`.`customer_id` = `user`.`id`;

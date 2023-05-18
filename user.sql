@@ -137,3 +137,5 @@ ALTER TABLE `user` DROP COLUMN `email`;
 -- rename old cloumnname phone to new cloumnname moblie_number
 ALTER TABLE `user`
     RENAME COLUMN `phone` to `mobile`;
+ALTER TABLE `user`
+ADD PRIMARY KEY (`id`);
