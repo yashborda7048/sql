@@ -1,4 +1,4 @@
-CREATE TABLE stdent (
+CREATE TABLE `stdent`(
     id INT,
     name VARCHAR(50),
     birth_date DATE,
