@@ -1,4 +1,4 @@
-CREATE TABLE city (
+CREATE TABLE `city`(
     city_id INT NOT NULL AUTO_INCREMENT,
     city_name VARCHAR(50) NOT NULL,
     PRIMARY KEY (city_id)
@@ -14,4 +14,3 @@ VALUES ('Agra'),
 INSERT INTO `city` (`city_name`) value ('Rajkot'),
     ('Mumbai');
 
-    

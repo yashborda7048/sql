@@ -102,3 +102,27 @@ FROM `user`
 SELECT *
 FROM `user`
     CROSS JOIN `city`;
+-- add cloumn
+ALTER TABLE `user`
+ADD `order` INT NOT NULL DEFAULT 1;
+-- two table  join table 
+SELECT *
+FROM `user`
+    LEFT JOIN `city` ON `user`.`city` = `city`.`city_id` -- get all data
+    INNER JOIN `order` ON `user`.`order` = `order`.`order_id` -- get only match order id data
+WHERE `city`.`city_name` = 'Agra';
+-- group by table 
+SELECT `city`.`city_name` AS `city`,
+    COUNT(city) AS `total`
+FROM `user`
+    INNER JOIN `city` ON `user`.`city` = `city`.`city_id`
+GROUP BY `city`;
+-- search city Bhopal and Surat
+SELECT `name`,
+    `email`
+FROM `user`
+WHERE city IN (
+        SELECT `city_id`
+        FROM `city`
+        WHERE city_name IN ('Bhopal', 'Surat')
+    );
