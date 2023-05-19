@@ -126,3 +126,18 @@ WHERE city IN (
         FROM `city`
         WHERE city_name IN ('Bhopal', 'Surat')
     );
+-- view data for any query
+CREATE VIEW `Agra_User_data` AS
+SELECT `user`.`id`,
+    `user`.`name`,
+    `user`.`age`,
+    `user`.`phone`,
+    `user`.`email`,
+    `city`.`city_name` As `city`
+FROM `user`
+    INNER JOIN `city` ON `user`.`city` = `city`.`city_id`
+WHERE `city`.`city_name` = 'Agra'
+ORDER BY `user`.`name`;
+-- and any time show run this command 
+SELECT *
+FROM `Agra_User_data`;

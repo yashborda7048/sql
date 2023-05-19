@@ -13,4 +13,3 @@ VALUES ('Agra'),
 -- add value for right join table 
 INSERT INTO `city` (`city_name`) value ('Rajkot'),
     ('Mumbai');
-
